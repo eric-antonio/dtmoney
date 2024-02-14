@@ -16,7 +16,7 @@ createServer({
           title:'Free lancer de WebSite',
           type:'deposit',
           category:'Dev',
-          amount:7000,
+          amount:8000,
           createdAt:new Date('2022-04-13 09:34')
         },
         {
@@ -24,14 +24,14 @@ createServer({
           title:'Pagamento do Aluguel',
           type:'withdraw',
           category:'Casa',
-          amount:2400,
+          amount:1700,
           createdAt:new Date('2022-05-12 19:34')
         },{
           id:3,
           title:'Compras da Casa',
           type:'withdraw',
           category:'Casa',
-          amount:5000,
+          amount:560,
           createdAt:new Date('2022-03-13 05:24')
         }
       ]

@@ -8,8 +8,25 @@ import DollarSing from "../../assets/DollarIcon.svg";
 import { TransactionsContext } from "../../TransactionsContext";
 
 export function Summary() {
-  const {transactions} = useContext(TransactionsContext);
-  console.log(transactions)
+  const { transactions } = useContext(TransactionsContext);
+
+  const summary = transactions.reduce(
+    (acc, transaction) => {
+      if (transaction.type === "deposit") {
+        acc.deposits += transaction.amount;
+        acc.total += transaction.amount;
+      } else {
+        acc.withdraws += transaction.amount;
+        acc.total -= transaction.amount;
+      }
+      return acc;
+    },
+    {
+      deposits: 0,
+      withdraws: 0,
+      total: 0,
+    }
+  );
 
   return (
     <Container>
@@ -18,7 +35,12 @@ export function Summary() {
           <p>Entradas</p>
           <img src={IncomeImg} alt="income money" />
         </header>
-        <strong>17.400,00 MZN</strong>
+        <strong>
+          {new Intl.NumberFormat("pt-PT", {
+            style: "currency",
+            currency: "MZN",
+          }).format(summary.deposits)}
+        </strong>
       </div>
 
       <div>
@@ -26,7 +48,13 @@ export function Summary() {
           <p>Saídas</p>
           <img src={OutcomeImg} alt="out come money" />
         </header>
-        <strong>-7.400,00 MZN</strong>
+        <strong>
+          -
+          {new Intl.NumberFormat("pt-PT", {
+            style: "currency",
+            currency: "MZN",
+          }).format(summary.withdraws)}
+        </strong>
       </div>
 
       <div className="highlight-background">
@@ -34,7 +62,12 @@ export function Summary() {
           <p>Total</p>
           <img src={DollarSing} alt="amount money" />
         </header>
-        <strong>137.400,00 MZN</strong>
+        <strong>
+          {new Intl.NumberFormat("pt-PT", {
+            style: "currency",
+            currency: "MZN",
+          }).format(summary.total)}
+        </strong>
       </div>
     </Container>
   );
