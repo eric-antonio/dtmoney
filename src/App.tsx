@@ -3,9 +3,7 @@ import { GlobalStyle } from "./styles/global";
 import { Header } from "./components/Header";
 import { DashBoard } from "./components/DashBoard";
 import { NewTransactionModal } from "./components/NewTransactionModal";
-import { TransactionProvider } from "./TransactionsContext";
-
-// Modal.setAppElement('#root');
+import { TransactionProvider } from "./hooks/useTransactions";
 
 export function App() {
   const [isNewTransactionOpen, setIsNewModalTransactionOpen] = useState(false);

@@ -1,14 +1,14 @@
-import { useContext } from "react";
+
 import { Container } from "./styles";
 
 import IncomeImg from "../../assets/IncomeIcon.svg";
 import OutcomeImg from "../../assets/OutComeIcon.svg";
 import DollarSing from "../../assets/DollarIcon.svg";
 
-import { TransactionsContext } from "../../TransactionsContext";
+import {useTransactions } from "../../hooks/useTransactions";
 
 export function Summary() {
-  const { transactions } = useContext(TransactionsContext);
+  const { transactions } = useTransactions();
 
   const summary = transactions.reduce(
     (acc, transaction) => {
