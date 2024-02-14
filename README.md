@@ -47,5 +47,4 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Figma Design
 
-You can access this figma design [dtmoney]
-(https://www.figma.com/file/BAMUJxtcnPzJv4WK8IjIbA/DT-Money-(Community)?type=design&node-id=42078-424&mode=design&t=WxEaE9riAan9xPT1-0)
+You can access this figma design [dtmoney](https://www.figma.com/file/BAMUJxtcnPzJv4WK8IjIbA/DT-Money-(Community)?type=design&node-id=42078-424&mode=design&t=WxEaE9riAan9xPT1-0)
